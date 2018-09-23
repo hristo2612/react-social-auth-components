@@ -85,7 +85,7 @@
     "build:lib": "npm-run-all --parallel build:commonjs build:css build:copy-files",
     "build:copy-files": "node scripts/copyBuildFiles.js",
     "predeploy": "npm run build:docs",
-    "deploy": "gh-pages -d build",
+    "deploy": "npm run gen:docs && gh-pages -d build",
     "build:commonjs": "cross-env NODE_ENV=production babel ./src/components --out-dir ./lib --ignore spec.js",
     "prepublish": "npm run build:lib"
   },
