@@ -1,14 +1,14 @@
-import { toParams, toQuery } from './utils';
+import { toParams } from './utils';
 
 class PopupWindow {
   constructor(id, url, options = {}) {
-    this.id = id;
+    //this.id = id;
     this.url = url;
-    this.options = options;
+    //this.options = options;
   }
 
   open() {
-    const { url, id, options } = this;
+    const { url, /*id, options*/ } = this;
 
     this.window = window.open(url);
   }
@@ -37,7 +37,7 @@ class PopupWindow {
           }
 
           const params = toParams(popup.location.search.replace(/^\?/, ''));
-          console.log(params);
+          //console.log(params);
           resolve(params);
 
           this.close();
